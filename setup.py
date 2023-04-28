@@ -20,7 +20,9 @@ setup(
         "Programming Language :: Python :: 3.9",
         "Operating System :: OS Independent",
     ],
-    install_requires=["bson >= 0.5.10"],
+    install_requires=["numpy >= 1.21.5",
+                      "matplotlib >= 3.5.2",
+                      "pandas >= 1.4.4"],
     extras_require={
         "dev": ["pytest>=7.0", "twine>=4.0.2"],
     },
