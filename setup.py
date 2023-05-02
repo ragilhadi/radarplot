@@ -5,7 +5,7 @@ with open("app/README.md", "r") as f:
 
 setup(
     name="radarplot",
-    version="0.0.1",
+    version="0.0.2",
     description="A package used to easily create radar visualization",
     package_dir={"": "app"},
     packages=find_packages(where="app"),

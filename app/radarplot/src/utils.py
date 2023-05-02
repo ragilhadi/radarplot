@@ -61,11 +61,11 @@ def draw_radar(ax, data_radar, angles, colors_alpha, marker, marker_size, colors
             ax.fill(angles, data_radar[key], color=colors_pallate[count], alpha=colors_alpha)
             count += 1
 
-def legend_styling(ax, style):
+def legend_styling(ax, style, col):
     if style == 'bottom':
         ax.legend(loc='lower center',
             bbox_to_anchor=(0.5, -0.17),
-            ncol=2,
+            ncol=col,
             borderpad=1,
             frameon=False,
             fontsize=8
@@ -73,7 +73,7 @@ def legend_styling(ax, style):
     elif style == 'top':
         ax.legend(loc='upper center',
             bbox_to_anchor=(0.5, 1.17),
-            ncol=2,
+            ncol=col,
             borderpad=1,
             frameon=False,
             fontsize=8

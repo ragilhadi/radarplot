@@ -15,5 +15,8 @@ data_minmax = rd.get_minmax(df, columns=['bill_length_mm',
 rd.radar(data=species_mass, 
             category='species', 
             data_minmax=data_minmax,
-            values=species_mass.columns[1:].to_list())
-plt.show()
+            legend_col=3,
+            values=species_mass.columns[1:].to_list(),
+            show_circle=True,
+            show_label=True)
+plt.savefig('test.jpg')

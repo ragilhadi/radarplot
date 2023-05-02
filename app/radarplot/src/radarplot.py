@@ -9,9 +9,10 @@ from math import pi
 def radar(data, category, values, 
               data_minmax = None,
               scaled=None, colors=None, colors_alpha=0.2,
-              legend_style='bottom', title=None, circle=5,
+              legend_style='bottom', legend_col=2,
+              title=None, circle=5,
               marker=None, marker_size=3, 
-              show_yticks=0, show_circle = 0,
+              show_label=False, show_circle = False,
               **kwargs):
     """
     A function to create radar visualization
@@ -30,7 +31,7 @@ def radar(data, category, values,
     ylim_max = get_ymax_lim(data_radar)
     yticks, yticks_label = get_yticks(ylim_max, circle)
 
-    if show_circle == 0:
+    if show_circle == False:
         yticks = []
 
     plt.figure(figsize=(16,6))
@@ -39,9 +40,9 @@ def radar(data, category, values,
     ax.set_theta_direction(-1)
     ax.set_xticks(angles[:-1], values)
     ax.set_rlabel_position(0)
-    if show_yticks == 1:
+    if show_label == True:
         ax.set_yticks(yticks, yticks_label, color="grey", size=7)
-    elif show_yticks == 0:
+    elif show_label == False:
         ax.set_yticks(yticks, [], color="grey", size=7)
     ax.set_ylim(0,ylim_max)
 
@@ -61,7 +62,7 @@ def radar(data, category, values,
     
     if title is not None:
         put_title(ax,title)
-    legend_styling(ax, legend_style)
+    legend_styling(ax, legend_style, legend_col)
     
 
 
