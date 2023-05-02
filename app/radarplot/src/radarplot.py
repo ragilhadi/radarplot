@@ -9,8 +9,10 @@ from math import pi
 def radar(data, category, values, 
               data_minmax = None,
               scaled=None, colors=None, colors_alpha=0.2,
+              show_legend=True,
               legend_style='bottom', legend_col=2,
-              title=None, circle=5,
+              title=None, title_position=1.08,
+              circle=5,
               marker=None, marker_size=3, 
               show_label=False, show_circle = False,
               **kwargs):
@@ -46,9 +48,6 @@ def radar(data, category, values,
         ax.set_yticks(yticks, [], color="grey", size=7)
     ax.set_ylim(0,ylim_max)
 
-    xmin, xmax = ax.get_xlim()
-    ymin, ymax = ax.get_ylim()
-
     if colors is not None:
         draw_radar(ax=ax, data_radar=data_radar, 
                    angles=angles, colors=colors,
@@ -61,8 +60,10 @@ def radar(data, category, values,
                    angles=angles, colors_alpha=colors_alpha)
     
     if title is not None:
-        put_title(ax,title)
-    legend_styling(ax, legend_style, legend_col)
+        put_title(ax,title, title_position)
+
+    if show_legend:
+        legend_styling(ax, legend_style, legend_col)
     
 
 
